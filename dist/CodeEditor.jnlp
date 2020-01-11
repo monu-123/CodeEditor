@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="CodeEditor.jnlp">
+  <information>
+    <title>CodeEditor</title>
+    <vendor>Princy</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  <shortcut><desktop/></shortcut>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="CodeEditor.jar" size="183983" download="eager" />
+    <jar href="lib\flowless-0.4.5.jar" size="55773" download="eager" />
+    <jar href="lib\javafx-swt.jar" size="36811" download="eager" />
+    <jar href="lib\javafx.base.jar" size="749889" download="eager" />
+    <jar href="lib\javafx.controls.jar" size="2511137" download="eager" />
+    <jar href="lib\javafx.fxml.jar" size="127395" download="eager" />
+    <jar href="lib\javafx.graphics.jar" size="4295861" download="eager" />
+    <jar href="lib\javafx.media.jar" size="270594" download="eager" />
+    <jar href="lib\javafx.swing.jar" size="119848" download="eager" />
+    <jar href="lib\javafx.web.jar" size="714741" download="eager" />
+    <jar href="lib\reactfx-2.0-M4u1.jar" size="407140" download="eager" />
+    <jar href="lib\richtextfx-0.6.9.jar" size="150340" download="eager" />
+    <jar href="lib\sphinx4-core-5prealpha-20160628.232526-10.jar" size="1259793" download="eager" />
+    <jar href="lib\sphinx4-data-5prealpha-20160628.232535-10.jar" size="35643722" download="eager" />
+    <jar href="lib\undofx-1.2.jar" size="21145" download="eager" />
+    <jar href="lib\wellbehavedfx-0.1.1.jar" size="43039" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="codeeditor.CodeEditor"  name="CodeEditor" />
+  <update check="always"/>
+</jnlp>

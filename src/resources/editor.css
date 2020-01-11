@@ -1,0 +1,17 @@
+/*
+ * Empty Stylesheet file.
+ */
+.keyword{
+    -fx-fill: #FFFFFF;
+}
+.mainFxmlClass {
+
+}
+.text-Area {
+    text-Area-background: blue ;
+}
+
+.text-Area .content {
+    -fx-background-color: text-area-background ;
+}
+   

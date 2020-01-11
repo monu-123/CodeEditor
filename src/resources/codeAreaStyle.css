@@ -1,0 +1,71 @@
+/* 
+    Created on : 4 Jan, 2020, 11:38:48 AM
+    Author     : Princy
+*/
+.keyword {
+    -fx-fill: #EC5553;
+    -fx-font-weight: normal;
+}
+.semicolon {
+    -fx-fill: #A9B7C6;;
+    -fx-font-weight: normal;
+
+}
+.paren {
+    -fx-fill: teal;
+    -fx-font-weight: normal;
+}
+.bracket {
+    -fx-fill: teal;
+    -fx-font-weight: normal;
+
+}
+.brace {
+    -fx-fill: teal;
+    -fx-font-weight: normal;
+
+}
+
+.digit {
+    -fx-fill: green;
+}
+
+.string {
+    -fx-fill: darkgreen;
+}
+.comment {
+    -fx-fill: #5E5E5E;
+    -fx-font-style: italic;
+    -fx-font-size: 18;
+}
+
+
+.codeArea
+{
+    -fx-background-color:  #343D46;
+     -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-font-size: 20;
+    -fx-border-color: #5E5E5E;
+    -fx-border-width: 1px;
+    -fx-left-margin: 10;
+}
+.localText {
+-fx-fill: #A9B7C6;
+}
+.styled-text-area .caret {
+    -fx-stroke: white;
+    
+}
+
+
+.menu-item:focused .label {
+  -fx-text-fill: white;
+}
+
+
+
+
+
+

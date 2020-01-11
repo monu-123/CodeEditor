@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor1" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #4D555C;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codeeditor.EditorController">
+   <children>
+      <VBox fx:id="fileBox" prefHeight="40.0" prefWidth="900.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="900.0">
+              <menus>
+                <Menu fx:id="fileMenus" mnemonicParsing="false" text="File">
+                  <items>
+                       <MenuItem fx:id="createNewFile" mnemonicParsing="false" onAction="#createNewfile" text="New">
+                     </MenuItem>
+                        <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#openOldFile" text="Open" />
+                        <SeparatorMenuItem fx:id="openSeperator" mnemonicParsing="false" text="seperator1" />
+                        <MenuItem fx:id="saveFile" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                        <MenuItem fx:id="saveas" mnemonicParsing="false" text="Save as" />
+                        <SeparatorMenuItem fx:id="saveSeperator" mnemonicParsing="false" text="seperator2" />
+                        <MenuItem fx:id="closeFile" mnemonicParsing="false" onAction="#closeSelectedFile" text="Close" />
+                        <MenuItem fx:id="exitFile" mnemonicParsing="false" onAction="#exitFromProgram" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu fx:id="editMenus" mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="undo" mnemonicParsing="false" onAction="#undo" text="Undo" />
+                        <MenuItem fx:id="redo" mnemonicParsing="false" onAction="#redo" text="Redo" />
+                        <SeparatorMenuItem fx:id="editSeperator1" mnemonicParsing="false" text="editSeperator1" />
+                        <MenuItem fx:id="cut" mnemonicParsing="false" onAction="#cut" text="Cut" />
+                        <MenuItem fx:id="copy" mnemonicParsing="false" onAction="#copy" text="Copy" />
+                        <MenuItem fx:id="paste" mnemonicParsing="false" onAction="#paste" text="Paste" />
+                        <MenuItem fx:id="searchWord" mnemonicParsing="false" onAction="#searchWord" text="Find" />
+                        <MenuItem fx:id="findReplace" mnemonicParsing="false" onAction="#searchReplace" text="Find and Replace" />
+                  </items>
+                </Menu>
+                <Menu fx:id="viewMenus" mnemonicParsing="false" text="View">
+                  <items>
+                    <MenuItem fx:id="showToolBar" mnemonicParsing="false" text="Show ToolBar" />
+                        <MenuItem fx:id="showLineNumber" mnemonicParsing="false" text="Show LineNumber" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="toolMenus" mnemonicParsing="false" text="Tool">
+                    <items>
+                      <MenuItem fx:id="onSpeechRecognition" mnemonicParsing="false" onAction="#onSpeechRecognition" text="On Speech Recognition" />
+                      <MenuItem fx:id="openTerminal" mnemonicParsing="false" onAction="#showTerminal" text="Open Terminal" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="helpMenus" mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem fx:id="about" mnemonicParsing="false" onAction="#aboutApplication" text="About" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="26.0" prefWidth="898.0" VBox.vgrow="ALWAYS">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#onSpeechRecognition">
+                     <graphic>
+                        <ImageView fx:id="startSpeech" fitHeight="34.0" fitWidth="61.0" onMouseClicked="#onSpeechRecognition" onTouchPressed="#onSpeechRecognition" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@playIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#stopSpeechRecognition">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@stopButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="runButton" lineSpacing="20.0" mnemonicParsing="false" onAction="#runProgram" text="Run" textAlignment="CENTER" textFill="#49382d">
+                     <font>
+                        <Font name="Consolas" size="13.0" />
+                     </font>
+                  </Button>
+               </items></ToolBar>
+            <TabPane fx:id="tabPane" style="-fx-background-color: #4D555C;" VBox.vgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="resultBox" layoutX="13.0" layoutY="521.0" maxHeight="200.0" prefHeight="150.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
