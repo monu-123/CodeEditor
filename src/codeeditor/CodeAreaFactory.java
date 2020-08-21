@@ -26,19 +26,27 @@ import org.fxmisc.richtext.LineNumberFactory;
  */
  
 public class CodeAreaFactory {
+    //constructor 
     public CodeAreaFactory(){}
+ 
+    //Method for applying css to Text area using css file
     private CodeArea applyCSS(CodeArea codeArea)
     {
         codeArea.getStylesheets().add(CodeAreaFactory.class.getResource("/resources/codeAreaStyle.css").toExternalForm());
         return codeArea;
     }
-    public static SmartCodeArea getCodeArea(String fileName)
+    
+ // static method to get CodeArea Object for perticular extention(java,cpp or c) because according to extention it select keywords and reserver words.
+ public static SmartCodeArea getCodeArea(String fileName)
     {
         CodeAreaFactory factory=new CodeAreaFactory();
         String extention=fileName.substring(fileName.lastIndexOf(".")+1);
+        //Called Helper class static method getKeywordList to get list of keywords
         TreeSet<String> keywords=Helper.getKeywordList(extention);
+        //get List of reserve word
         TreeSet<String> reserveWords=Helper.getReserveWordSet(extention);
         SmartCodeArea codeArea;
+        // create object acording to extention.
         if(extention.equals("java"))
             codeArea = new SmartCodeArea(keywords,reserveWords);
         else
@@ -57,9 +65,9 @@ public class CodeAreaFactory {
         codeArea.setList(list);
         factory.applyCSS(codeArea);
         codeArea.getStyleClass().add("codeArea");
-        //codeArea.appendText("JaiShreeRam");
+        //For line number
         codeArea.setParagraphGraphicFactory(LineNumberFactory.get(codeArea));
-        // for auto indentation 
+        //Auto indentation 
         Pattern whiteSpace = Pattern.compile( "^\\s+" );
         codeArea.addEventFilter( KeyEvent.KEY_PRESSED, KE ->
         {
